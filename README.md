@@ -1,54 +1,120 @@
-# 🍚 안선아의집밥의민족 (Seona's Jibbab)
+# 🏠 집밥의민족
 
-## 1\. 🌟 프로젝트 비전 & 철학 (Branding Philosophy)
+> **해먹자, 근데 싸게** — 배달 대신 집밥, 재료도 알뜰하게
 
-### "배달 앱을 끄고 가스레인지를 켜는 순간의 자부심"
+---
 
-오늘날 대학생들에게 '식사'는 단순히 배를 채우는 행위를 넘어 경제적 부담이 되었습니다. '거지방' 유행과 물가 상승 속에서 우리는 배달 앱의 화려한 사진을 보다가도 결국 편의점 도시락이나 라면으로 타협하곤 합니다.
+## 📱 프로젝트 개요
 
-**안선아의집밥의민족**은 이 지점에서 출발했습니다.
-돈이 없어서 어쩔 수 없이 해 먹는 '궁상맞은 한 끼'가 아니라, \*\*치솟는 물가에 맞서 나만의 식탁을 지켜내는 '똑똑하고 유쾌한 생존 게임'\*\*으로 집밥의 가치를 재정의합니다.
+**집밥의민족**은 물가 상승으로 배달비 부담이 커진 대학생을 위한 집밥 레시피 & 식재료 할인정보 공유 앱입니다.
 
------
+배달의민족 UI/UX를 패러디하여, 익숙한 인터페이스 안에 "해먹는 즐거움"을 담았습니다.
+"주문하기" 대신 "지금 만들기", 음식점 목록 대신 레시피 목록 — 배달앱처럼 생겼지만 지갑은 훨씬 가볍습니다.
 
-## 2\. 🎯 타겟 사용자 (Target Audience)
+### 기획 배경
+- 최근 배달비·외식비 급등으로 대학생의 식비 부담 증가
+- '거지맵' 등 절약 트렌드가 MZ세대 사이에서 확산
+- 집밥을 해먹고 싶어도 레시피 탐색 + 장보기 할인 정보를 따로 찾아야 하는 불편함
 
-* **알뜰 자취생:** 배달비 4,000원에 분노하며 주방으로 향하는 대학생.
-* **초보 요리사:** 거창한 레시피보다 '지금 내 냉장고에 있는 재료'로 대충 맛있게 먹고 싶은 사람.
-* **절약가:** '거지방'에서 절약을 인증하며 동질감과 재미를 느끼는 MZ세대.
+---
 
------
+## ✨ 주요 기능
 
-## 3\. ✨ 핵심 기능 (Key Features)
+### 1. 레시피 추천
+- 한식 · 양식 · 중식 · 일식 · 10분 이내 카테고리 필터
+- 재료 수, 조리시간, 난이도 기반 필터 및 정렬
+- 레시피 상세 페이지: 재료 목록 + 단계별 조리 순서
+- "맛있었어요" 버튼으로 인기 레시피 확인
 
-| 기능 | 상세 설명 | 브랜딩 가치 |
-| :--- | :--- | :--- |
-| **자취 생존 피드** | 오늘 해 먹은 음식 사진과 **실제 지출 비용** 공유 | 절약의 가시화 및 성취감 고취 |
-| **물가 방어 지도** | 동네 마트의 마감 세일, 식재료 득템 정보 실시간 공유 | 지역 기반 커뮤니티의 연대감 |
-| **절약 저금통** | 배달 대비 아낀 금액을 자동으로 계산해 주는 대시보드 | '집밥'을 통한 경제적 효능감 제공 |
+### 2. 식재료 할인정보 커뮤니티
+- 사용자가 직접 주변 마트·플랫폼 할인 정보 등록
+- 이마트 · 홈플러스 · 쿠팡 · 편의점 등 필터
+- 할인율 자동 계산, 유효기간 표시
+- 좋아요로 신뢰도 높은 정보 상단 노출
 
------
+---
 
-## 4\. 🎨 브랜드 아이덴티티 (Brand Identity)
+## 🛠 기술 스택
 
-* **Name:** 안선아의집밥의민족 (본인 이름을 내걸고 신뢰와 개성을 강조)
-* **Slogan:** 해먹자, 근데 싸게
-* **Color:** `Deep Green (#1D9E75)` — 정갈한 식탁과 신선한 재료, 그리고 심리적 안정감을 상징하는 우드톤 그린.
-* **Symbol:** '집'과 '식기도구(숟가락/젓가락)'를 결합하여, 가장 편안한 공간인 집에서 이루어지는 건강한 식사 문화를 형상화.
+| 항목 | 내용 |
+|------|------|
+| Framework | Flutter |
+| Language | Dart |
+| 상태관리 | setState |
+| 플랫폼 | iOS / Android |
 
------
+---
 
-## 5\. 🛠 기술 스택 (Tech Stack)
+## 📂 화면 구성
 
-* **Framework:** Flutter (Cross-platform Mobile App)
-* **State Management:** Riverpod
-* **Back-end:** Firebase (예정)
-* **Design Tool:** Canva / Custom Branding System
+| 화면 | 설명 |
+|------|------|
+| 스플래시 | 앱 시작 로딩 화면 |
+| 홈 | 카테고리 + 오늘의 추천 레시피 |
+| 레시피 목록 | 검색 · 필터 · 정렬 기능 |
+| 레시피 상세 | 재료 목록 + 조리 순서 + 지금 만들기 |
+| 할인정보 | 사용자 등록 할인 피드 |
+| 할인정보 등록 | 마트 · 품목 · 가격 · 기간 입력 폼 |
 
------
+---
 
-## 6\. 📂 과제 수행 및 실습 기록 (Week 7)
+## 🙋 본인이 구현한 부분
 
-* [x] **과제 1:** OS별 설정 파일 수정을 통한 본인 이름 기반 앱 이름 설정 완료
-* [x] **과제 2:** 브랜드 콘셉트를 반영한 다해상도 아이콘 제작 및 자동화 적용 완료 (`flutter_launcher_icons` 활용)
-* [ ] **확장 학습:** Splash Screen 연동 및 배포 최적화 진행 중
+- 전체 화면 기획 및 UI 구성
+- 앱 브랜딩 (컬러 시스템, 로고, 슬로건)
+- 스플래시 스크린
+- 홈 화면 레이아웃 및 카테고리 필터
+- 레시피 목록 화면 (검색바, 필터 칩, 카드 리스트)
+- 레시피 상세 화면 (재료 목록, 조리 순서, 맛있었어요 기능)
+- 할인정보 화면 (마트별 필터, 카드 리스트, 좋아요)
+- 할인정보 등록 화면 (입력 폼, 할인율 자동 계산)
+- 하단 네비게이션 바 연결
+
+---
+
+## 🤖 AI 활용 여부 및 활용 범위
+
+본 프로젝트는 **바이브 코딩(Vibe Coding)** 방식을 적극 활용하였습니다.
+
+| 활용 도구 | 활용 내용 |
+|-----------|-----------|
+| Claude (Anthropic) | 앱 기획 · 아이디어 구체화 · 브랜딩 방향 설정 |
+| Claude / Cursor | 각 화면별 Flutter 코드 생성 (프롬프트 기반) |
+
+- 화면별로 상세한 프롬프트를 직접 작성하여 코드 생성
+- 생성된 코드를 검토·수정하며 앱에 통합
+- 브랜딩 컨셉(배달앱 패러디, 컬러 시스템, 슬로건)은 직접 기획
+
+---
+
+## 📄 라이선스
+
+```
+MIT License
+
+Copyright (c) 2026
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+```
+
+---
+
+## 📸 실행 화면
+
+> GitHub 제출 시 `screenshots/` 폴더에 캡처 이미지 추가 필요
+
+---
+
+*집밥의민족 — 배달 말고 해먹자, 근데 싸게* 🏠🍳

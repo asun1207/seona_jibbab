@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jibbab_app/recipe_screen.dart'; // 레시피 화면 불러오기
 import 'package:jibbab_app/discount_screen.dart'; // 할인 정보 화면 불러오기
+import 'package:jibbab_app/my_page_screen.dart'; // 마이페이지 화면 불러오기
 
 void main() {
   runApp(const JibbabMinjokApp());
@@ -39,7 +40,7 @@ class _MainScreenState extends State<MainScreen> {
     const HomeScreen(),      // 0번: 홈 화면
     const RecipeScreen(),    // 1번: 레시피 화면
     const DiscountScreen(), // 2번: 할인 정보 화면
-    const Center(child: Text('마이페이지 준비 중')), // 3번: 임시 화면
+    const MyPageScreen(), // 4번: 마이 페이지 화면
   ];
 
   @override
