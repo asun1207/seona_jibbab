@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jibbab_app/recipe_screen.dart'; // 레시피 화면 불러오기
 
 void main() {
   runApp(const JibbabMinjokApp());
@@ -15,11 +16,57 @@ class JibbabMinjokApp extends StatelessWidget {
         primaryColor: const Color(0xFF1D9E75),
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: const HomeScreen(),
+      // 앱이 켜지면 가장 먼저 'MainScreen'을 띄우도록 변경했습니다.
+      home: const MainScreen(),
     );
   }
 }
 
+// 🌟 새롭게 추가된 화면 컨트롤러 (하단 탭을 관리합니다)
+class MainScreen extends StatefulWidget {
+  const MainScreen({super.key});
+
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  int _selectedIndex = 0;
+
+  // 탭을 눌렀을 때 보여줄 화면들
+  final List<Widget> _screens = [
+    const HomeScreen(),      // 0번: 홈 화면
+    const RecipeScreen(),    // 1번: 레시피 화면
+    const Center(child: Text('할인정보 준비 중')), // 2번: 임시 화면
+    const Center(child: Text('마이페이지 준비 중')), // 3번: 임시 화면
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: _screens[_selectedIndex], // 현재 선택된 인덱스의 화면을 보여줌
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: const Color(0xFF1D9E75),
+        unselectedItemColor: Colors.grey,
+        currentIndex: _selectedIndex,
+        onTap: (index) {
+          setState(() {
+            _selectedIndex = index; // 탭 클릭 시 상태 업데이트
+          });
+        },
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: '홈'),
+          BottomNavigationBarItem(icon: Icon(Icons.receipt_long), label: '레시피'),
+          BottomNavigationBarItem(icon: Icon(Icons.local_offer_outlined), label: '할인정보'),
+          BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: '마이페이지'),
+        ],
+      ),
+    );
+  }
+}
+
+// 기존 홈 화면 (하단 네비게이션 바는 MainScreen으로 옮겼으므로 여기서는 삭제했습니다!)
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
@@ -80,9 +127,9 @@ class HomeScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  _buildCategoryItem('🍱', '한식'),
+                  _buildCategoryItem('🍚', '한식'),
                   _buildCategoryItem('🍝', '양식'),
-                  _buildCategoryItem('🇨🇳', '중식'),
+                  _buildCategoryItem('🥮', '중식'),
                   _buildCategoryItem('🍣', '일식'),
                   _buildCategoryItem('⏱️', '10분이내'),
                 ],
@@ -105,19 +152,6 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: 24),
           ],
         ),
-      ),
-      // 6. 하단 네비게이션 바
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: const Color(0xFF1D9E75),
-        unselectedItemColor: Colors.grey,
-        currentIndex: 0,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: '홈'),
-          BottomNavigationBarItem(icon: Icon(Icons.receipt_long), label: '레시피'),
-          BottomNavigationBarItem(icon: Icon(Icons.local_offer_outlined), label: '할인정보'),
-          BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: '마이페이지'),
-        ],
       ),
     );
   }
