@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jibbab_app/discount_register_screen.dart';
 
 class DiscountScreen extends StatefulWidget {
   const DiscountScreen({super.key});
@@ -91,7 +92,13 @@ class _DiscountScreenState extends State<DiscountScreen> {
         actions: [
           IconButton(
             icon: const Icon(Icons.add, color: Colors.black),
-            onPressed: () {},
+            onPressed: () {
+              // 버튼 클릭 시 등록 화면으로 이동
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const DiscountRegisterScreen()),
+              );
+            },
           ),
         ],
       ),
@@ -146,7 +153,13 @@ class _DiscountScreenState extends State<DiscountScreen> {
       ),
       // 4. 플로팅 액션 버튼
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          // 버튼 클릭 시 등록 화면으로 이동
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const DiscountRegisterScreen()),
+          );
+        },
         backgroundColor: primaryColor,
         child: const Icon(Icons.add, color: Colors.white),
       ),
